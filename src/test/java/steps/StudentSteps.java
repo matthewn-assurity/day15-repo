@@ -16,6 +16,7 @@ public class StudentSteps {
 //        throw new io.cucumber.java.PendingException();
         RestAssured.baseURI = "https://it-foundations.app.ap.assurity.cloud/";
         response = RestAssured.get("people/" + studentId);
+        System.out.println(response.asPrettyString());
     }
     @Then("I can see that their name is {string}")
     public void i_can_see_that_their_name_is(String string) {
