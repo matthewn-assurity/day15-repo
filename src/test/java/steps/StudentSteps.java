@@ -16,7 +16,7 @@ public class StudentSteps {
     public void i_check_the_details_of_student(Integer studentId) {
         // Write code here that turns the phrase above into concrete actions
 //        throw new io.cucumber.java.PendingException();
-
+        RestAssured.defaultParser = Parser.JSON;
         RestAssured.baseURI = "https://it-foundations.app.ap.assurity.cloud/";
         response = RestAssured.get("people/" + studentId);
         System.out.println(response.asPrettyString());
